@@ -1,0 +1,84 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Global Recession Simulator</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="material.css">
+		<script src="material.js"></script>
+		<script src="app.js"></script>
+		<script src="chart.js"></script>
+		<script src="chart-geo.js"></script>
+	</head>
+	<body onload="loadPage();">
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		  <header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+			  <!-- Title -->
+			  <span class="mdl-layout-title">Global Recession Simulator</span>
+			  <!-- Add spacer, to align navigation to the right -->
+			  <div class="mdl-layout-spacer"></div>
+			  <!-- Navigation. We hide it in small screens. -->
+			  <nav class="mdl-navigation mdl-layout--large-screen-only">
+				<a class="mdl-navigation__link" href="">Link</a>
+			  </nav>
+			</div>
+		  </header>
+			<div class="mdl-layout__drawer">
+				<span class="mdl-layout-title">Title</span>
+				<nav class="mdl-navigation">
+					<a class="mdl-navigation__link" href="">Link</a>
+					<a class="mdl-navigation__link" href="">Link</a>
+					<a class="mdl-navigation__link" href="">Link</a>
+					<a class="mdl-navigation__link" href="">Link</a>
+				</nav>
+			</div>
+		  <main class="mdl-layout__content">
+			<div class="page-content">				
+				<div class="mdl-grid">
+					<h4 class="mdl-cell mdl-cell--12-col">Simulate recession</h4>
+					<div class="mdl-cell mdl-cell--6-col">
+						<p>
+							<label for="source">Source economy:</label>
+							<select name="source" id="source"></select>
+						</p>
+						<p>
+							<label for="loss">Intial loss:</label>
+							<input type="number" min="1" max="50" name="loss" id="loss"value="10"></input> %
+						</p>
+						<p>
+							<label for="precision">Precision:</label>
+							<input type="number" min="1" max="10" name="precision" id="precision"value="5"></input>
+						</p>
+						<p>
+							<button id="simulate" onclick="simulate();" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Simulate</button>
+						</p>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col">				
+						<p>To simulate a global recession, choose the following variables and then click "Simulate":</p>
+						<p><strong>Source economy</strong> - the country where the recession begins.</p>
+						<p><strong>Initial loss</strong> - by how much, in percentages, the source economy shrinks.</p>
+						<p><strong>Precision</strong> - number of decimal points to keep at each step of calculation. The higher this value is, the more accurate the result is and the larger the feedback effect is at each stage. Choose this value carefully as it can overload your CPU.</p>
+					</div>
+								
+				
+					<h4 class="mdl-cell mdl-cell--12-col">Simulation results:</h4>
+					
+					<div class="mdl-cell mdl-cell--6-col">
+						<table id="result" class="mdl-data-table mdl-js-data-table">
+							<thead>
+								<tr>
+								  <th class="mdl-data-table__cell--non-numeric">Simulation results will be shown here.</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+					
+					<div class="mdl-cell mdl-cell--6-col">
+						<canvas id="canvas"></canvas>
+					</div>
+				</div>
+			</div>
+		  </main>
+		</div>
+	</body>
+</html>
