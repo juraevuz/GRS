@@ -43,11 +43,17 @@
 						</p>
 						<p>
 							<label for="loss">Intial loss:</label>
-							<input type="number" min="1" max="50" name="loss" id="loss"value="10"></input> %
+							<input type="number" min="1" max="50" name="loss" id="loss"value="5"></input> %
 						</p>
 						<p>
-							<label for="precision">Precision:</label>
-							<input type="number" min="1" max="10" name="precision" id="precision"value="5"></input>
+							<label for="precision">Propagation level:</label>
+							<select name="level" id="level">
+								<option value="1">1</option>
+								<option value="2" selected>2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
 						</p>
 						<p>
 							<button id="simulate" onclick="simulate();" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Simulate</button>
@@ -57,7 +63,7 @@
 						<p>To simulate a global recession, choose the following variables and then click "Simulate":</p>
 						<p><strong>Source economy</strong> - the country where the recession begins.</p>
 						<p><strong>Initial loss</strong> - by how much, in percentages, the source economy shrinks.</p>
-						<p><strong>Precision</strong> - number of decimal points to keep at each step of calculation. The higher this value is, the more accurate the result is and the larger the feedback effect is at each stage. Choose this value carefully as it can overload your CPU.</p>
+						<p><strong>Propagation level</strong> - how deep the propagation of feedback effects should go. This value is the proxy for duration of the recession - the higher it is, the higher is the reverbaration number of shock effect accross all countries. <strong>Choose this value carefully as it can overload your CPU</strong>.</p>
 					</div>
 								
 				
