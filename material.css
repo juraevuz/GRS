@@ -5059,6 +5059,7 @@ input.mdl-button[type="submit"] {
     .mdl-data-table td:last-of-type, .mdl-data-table th:last-of-type {
       padding-right: 24px; }
   .mdl-data-table td {
+	text-wrap: wrap;
     position: relative;
     vertical-align: middle;
     height: 48px;
